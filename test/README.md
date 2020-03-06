@@ -1,6 +1,10 @@
 # Prueba para Desarrollador Front End para PJ Chile
 
-Para levantarlo, favor de simplemente correr 'npm start' dentro del directorio
+Para levantarlo, favor de simplemente correr 'npm start' dentro del directorio.
+
+También puede revisar la prueba en [mi página en github.io](http://ginnyn.github.io).
+
+(Mil disculpas por no usar la API que me dieron. No la pude hacer funcionar porque la URL me daba 404 por algún motivo, por lo que terminé usando la no-oficial [Amiibo Api](https://www.amiiboapi.com/))
 
 # Original README as follows
 
