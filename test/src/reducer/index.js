@@ -1,4 +1,4 @@
-import { ADD_TO_CART, ADD_TO_ITEM, CLEAN_STATE } from './../actions';
+import { ADD_TO_CART, ADD_TO_ITEM, CLEAN_STATE, REMOVE_ITEM } from './../actions';
 
 const initialState = {
   shoppingCart: [],
@@ -24,6 +24,10 @@ function rootReducer(state = initialState, action) {
       const temp3 = { ...state };
       temp3.shoppingCart = [];
       return temp3;
+    case REMOVE_ITEM:
+      const temp4 = { ...state };
+      temp4.shoppingCart = [ ...state.shoppingCart.filter((item) => item.amiibo.tail !== action.amiibo.amiibo.tail) ];
+      return temp4;
     default:
       return state;
   }

@@ -7,7 +7,7 @@ import List from './containers/list';
 import Checkout from './containers/checkout';
 import NavbarCustom from './components/navbar';
 import Cart from './components/cart';
-import { addToItem } from './actions';
+import { addToItem, removeItem } from './actions';
 import './App.scss';
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
         </Modal.Header>
 
         <Modal.Body>
-          <Cart shoppingCart={shoppingCart} onClick={(amiibo) => dispatch(addToItem(amiibo))} />
+          <Cart shoppingCart={shoppingCart} onClick={(amiibo) => dispatch(addToItem(amiibo))} onRemove={(amiibo) => dispatch(removeItem(amiibo))} />
         </Modal.Body>
 
         <Modal.Footer>

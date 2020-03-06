@@ -1,7 +1,7 @@
 import React from 'react';
 import { Media, Button, Container } from 'react-bootstrap';
 
-const Cart = ({ shoppingCart, onClick }) => {
+const Cart = ({ shoppingCart, onClick, onRemove }) => {
   return <Container>
     {shoppingCart.length === 0 ? <h3> Agregue Contenido al carrito</h3> : shoppingCart.map((item) =>
     <Media>
@@ -13,7 +13,8 @@ const Cart = ({ shoppingCart, onClick }) => {
       />
       <Media.Body>
         <h5>{item.amiibo.name} | Personaje: {item.amiibo.character}</h5>
-        <p> <Button onClick={() => onClick({ amiibo: { tail: item.amiibo.tail }, edit: -1 })}> - </Button> {item.total} <Button onClick={() => onClick({ amiibo: { tail: item.amiibo.tail }, edit: 1 })}> + </Button></p>
+        <p> <Button onClick={() => onClick({ amiibo: { tail: item.amiibo.tail }, edit: -1 })}> - </Button> {item.total} <Button onClick={() => onClick({ amiibo: { tail: item.amiibo.tail }, edit: 1 })}> + </Button> 
+        <Button variant="danger" onClick={() => onRemove({ amiibo: { tail: item.amiibo.tail }, edit: 1 })}> X </Button></p>
       </Media.Body>
     </Media>)}
   </Container>
